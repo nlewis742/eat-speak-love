@@ -17,7 +17,6 @@ const PORT = process.env.PORT || 3001;
 // // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
 
-
 // const sess = {
 //   secret: 'Super secret secret',
 //   cookie: {
@@ -34,7 +33,6 @@ const hbs = exphbs.create({ helpers });
 // };
 
 // app.use(session(sess));
-
 const sess = {
   secret: 'Super secret secret',
   cookie: {
@@ -52,7 +50,6 @@ const sess = {
 
 app.use(session(sess));
 
-
 // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
@@ -66,4 +63,3 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
-
