@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Project } = require('../../models');
+const { Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
@@ -13,6 +13,7 @@ router.post('/', withAuth, async (req, res) => {
   } catch (err) {
     res.status(400).json(err);
   }
+  console.log("post");
 });
 
 router.delete('/:id', withAuth, async (req, res) => {
@@ -23,11 +24,12 @@ router.delete('/:id', withAuth, async (req, res) => {
         user_id: req.session.user_id,
       },
     });
-
+    
     if (!postData) {
       res.status(404).json({ message: 'No post found with this id!' });
       return;
     }
+    console.log("delete");
 
     res.status(200).json(postData);
   } catch (err) {
