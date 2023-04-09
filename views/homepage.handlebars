@@ -1,27 +1,60 @@
-<!-- Loop over each object in the projects array -->
-{{#each newPosts as |post| }}
 <div class="row mb-4 project">
-  <div class="col-md-5">
+  <div class="col-md-10">
     <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{!-- {{{get_emoji}}} --}}
-      <a href="/forum/{{post.id}}">{{post.title}}</a>
+      Join Our Dysphagia Community
     </h2>
     <p>
-      {{!-- <span for="img" aria-label="money">💲</span> --}}
-      <!-- Pass needed_funding value to the helper function -->
-      {{!-- <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
-      needed! --}}
+      This website is for those with swallowing disorders and their caregivers.
+      We are here to support each other and share recipies, tips, and tricks
+      that improve our quality of life.
     </p>
-    <p>Created by {{post.user.name}} on {{format_date post.date_created}}</p>
-  </div>
-  <div class="col-md-7">
+    <div class="row">
+      <div class="col-md-6">
+        <h3>
+          Share Your Recipes
+        </h3>
+        <p>
+          Do you have a favorite recipe that you have modified to make it
+          easier to swallow? Share it with us!
+        </p>
+      </div>
+      <div class="col-md-6">
+        <h3>
+          Ask Questions
+        </h3>
+        <p>
+          Do you have a question about dysphagia? Ask it here and we will
+          try to answer it.
+        </p>
+      </div>
+      <div class="container">
+    <img
+      src="../assets/familyeatingtogether.jpg"
+      alt="A family eating together"
+      class="image"
+      >
+      <div class="overlay">
+        <div class="text">Stay connected during meal times!</div>
+      </div>
+    </div>
+    </p>
     <p>
-      {{#each post.lines as |line|}}
-      {{line}}
-      <br>
-      {{/each}}
+    <h2>
+      What is Dysphagia?
+    </h2>
+      Dysphagia is a swallowing disorder that has many causes
+      including but not limited to stroke, Parkinson's disease, ALS, and head
+      and neck cancer. Dysphagia can be mild to severe. A speech-language
+      pathologist can recommend a modified diet and swallowing techniques to
+      help you manage your dysphagia.
+    </p>
+        <img
+      src="../assets/IDDSI_Framework_whitebackground_Headline_small_July2020-(1).png"
+      alt="IDDSI Framework"
+      >
+    <p>
+      Please talk to your doctor and a speech-language pathologist before making
+      any changes to your diet or swallowing routine.
     </p>
   </div>
 </div>
-{{/each}}
