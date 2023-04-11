@@ -3,7 +3,8 @@ const newFormHandler = async (event) => {
 
   const title = document.querySelector('#project-name').value.trim();
   // const dateCreated = document.querySelector('#project-funding').value.trim();
-  const content = document.querySelector('#project-desc').value.trim();
+  const contentInput = document.querySelector('#project-desc');
+  const content = contentInput.value.trim().replace(/\n/g, '<br>');
 
   if (title && content) {
     const response = await fetch(`/api/posts`, {
@@ -22,6 +23,14 @@ const newFormHandler = async (event) => {
   }
   console.log("title, content");
 };
+
+const contentInput = document.querySelector('#project-desc');
+contentInput.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+   contentInput.value += '\n';
+  }
+});
 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
@@ -46,3 +55,9 @@ document
 document
   .querySelector('.project-list')
   .addEventListener('click', delButtonHandler);
+
+
+  const posts = document.querySelectorAll('.post-content');
+posts.forEach((post) => {
+  post.innerHTML = post.innerHTML.replace(/\n/g, '<br>');
+});
