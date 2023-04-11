@@ -2,12 +2,13 @@ const newFormHandler = async (event) => {
   event.preventDefault();
 
   const title = document.querySelector('#project-name').value.trim();
-  // const dateCreated = document.querySelector('#project-funding').value.trim();
   const content = document.querySelector('#project-desc').value.trim();
 
+  // if statement to check if the user has entered a name and content for the post before submitting the form to the server to be saved in the database and displayed on the profile page 
   if (title && content) {
     const response = await fetch(`/api/posts`, {
       method: 'POST',
+      body: JSON.stringify({ name, content, }),
       body: JSON.stringify({ title, content }),
       headers: {
         'Content-Type': 'application/json',
@@ -23,6 +24,7 @@ const newFormHandler = async (event) => {
   console.log("title, content");
 };
 
+// delete button handler 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');

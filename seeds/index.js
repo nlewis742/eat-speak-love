@@ -4,6 +4,7 @@ const { User, Post } = require('../models');
 const userData = require('./userData.json');
 const postData = require('./postData.json');
 
+// seed database 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
@@ -12,6 +13,7 @@ const seedDatabase = async () => {
     returning: true,
   });
 
+  // create posts 
   for (const post of postData) {
     await Post.create({
       ...post,
