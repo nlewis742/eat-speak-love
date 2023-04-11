@@ -1,18 +1,24 @@
 <!-- Loop over each object in the posts array -->
-{{#each posts as |post| }}
-<div class="row mb-4 project">
-  <div class="col-md-5">
-    <h2>
-      <a href="/forum/{{post.id}}">{{post.title}}</a>
-    </h2>
-    <p>
-    </p>
-    <p>Created by {{post.user.name}} on {{format_date post.date_created}}</p>
+{{#each posts as |post|}}
+  <div class="row mb-4 project">
+    <div class="col-md-5">
+      <h2>
+        {{post.title}}
+      </h2>
+      <p>
+      </p>
+      <p>Created by {{post.user.name}} on {{format_date post.date_created}}</p>
+    </div>
+    <div class="col-md-7">
+      <p>
+        {{{post.content}}}
+      </p>
+    </div>
   </div>
-  <div class="col-md-7">
-    <p>
-      {{{post.content}}}
-    </p>
-  </div>
-</div>
 {{/each}}
+
+<div>
+  <h3>
+        <a href="/profile">Add a recipe</a> 
+  </h3>
+</div>
