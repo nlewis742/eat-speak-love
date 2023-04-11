@@ -1,6 +1,3 @@
-// we need a functioning home page(description of dysphagia and login-if you aren't already), profile page, and forum
-//backend: organize database, config, models, routes
-
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
