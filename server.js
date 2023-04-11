@@ -1,6 +1,3 @@
-// we need a functioning home page(description of dysphagia and login-if you aren't already), profile page, and forum
-//backend: organize database, config, models, routes
-
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
@@ -19,7 +16,7 @@ const hbs = exphbs.create({ helpers });
 hbs.registerHelper('replace', helpers.replace)
 
 const sess = {
-  secret: 'Super secret secret',
+  secret: process.env.SECRET,
   cookie: {
     maxAge: 300000,
     httpOnly: true,

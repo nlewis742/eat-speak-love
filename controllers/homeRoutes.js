@@ -26,7 +26,7 @@ router.get("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+// get post by id and render post page with post data and session flag 
 router.get("/post/:id", async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
@@ -69,6 +69,7 @@ router.get("/profile", withAuth, async (req, res) => {
   }
 });
 
+// get forum page and render forum page with post data and session flag
 router.get("/forum", withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({
@@ -83,6 +84,7 @@ router.get("/forum", withAuth, async (req, res) => {
   }
 });
 
+// get login page and render login page with session flag
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
