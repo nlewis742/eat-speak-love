@@ -5,6 +5,7 @@ const newFormHandler = async (event) => {
   const contentInput = document.querySelector('#project-desc');
   const content = contentInput.value.trim().replace(/\n/g, '<br>');
 
+
   // if statement to check if the user has entered a name and content for the post before submitting the form to the server to be saved in the database and displayed on the profile page 
   if (title && content) {
     const response = await fetch(`/api/posts`, {
@@ -26,6 +27,7 @@ const newFormHandler = async (event) => {
 };
 
 
+
 const contentInput = document.querySelector('#project-desc');
 contentInput.addEventListener('keydown', (event) => {
   if (event.key === 'Enter') {
@@ -36,7 +38,6 @@ contentInput.addEventListener('keydown', (event) => {
 
 
 // delete button handler 
-
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');

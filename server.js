@@ -13,7 +13,9 @@ const PORT = process.env.PORT || 3001;
 
 // // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
-hbs.registerHelper('replace', helpers.replace)
+// hbs.registerHelper('replace', function(str, find, replace) {
+//   return str.replace(new RegExp(find, 'g'), replace);
+// });
 
 const sess = {
   secret: process.env.SECRET,
@@ -47,6 +49,6 @@ sequelize.sync({ force: false }).then(() => {
 });
 
 
-const html = template(context);
+// const html = template(context);
 
-console.log(html);
+// console.log(html);
