@@ -13,6 +13,7 @@ const PORT = process.env.PORT || 3001;
 
 // // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
+hbs.registerHelper('replace', helpers.replace)
 
 const sess = {
   secret: process.env.SECRET,
@@ -44,3 +45,8 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
+
+
+const html = template(context);
+
+console.log(html);

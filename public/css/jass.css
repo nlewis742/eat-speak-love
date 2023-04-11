@@ -26,16 +26,16 @@
   width: 100%;
   opacity: 0;
   transition: .5s ease;
-  background-color: #78858a;
+  background-color: #a4b2b8;
 }
 
 .container:hover .overlay {
-  opacity: .8;
+  opacity: .7;
 }
 
 .text {
-  color: rgb(3, 1, 88);
-  font-size: 20px;
+  color: rgb(2, 1, 12);
+  font-size: 30px;
   position: absolute;
   top: 50%;
   left: 50%;
