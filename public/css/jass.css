@@ -5,11 +5,52 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+ .container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #a4b2b8;
+}
+
+.container:hover .overlay {
+  opacity: .7;
+}
+
+.text {
+  color: rgb(2, 1, 12);
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+ 
  html {
     line-height: 1.15;
     /* 1 */
     -webkit-text-size-adjust: 100%;
     /* 2 */
+    background-color: #dedee4;
   }
   
   /* Sections
@@ -70,6 +111,7 @@
    */
   a {
     background-color: transparent;
+    padding: 2rem;
   }
   
   /**
@@ -420,12 +462,12 @@
   }
   
   a {
-    color: #1b89bc;
+    color: #19739c;
     text-decoration: none;
   }
   
   a:hover {
-    color: #065b83;
+    color: #36aecc;
     text-decoration: underline;
   }
   
@@ -683,6 +725,8 @@
   
   .p-2 {
     padding: 0.625rem;
+    margin-left: 6rem;
+    margin-right: 6rem;
   }
   
   .p-3 {

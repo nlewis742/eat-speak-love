@@ -22,6 +22,7 @@ const loginFormHandler = async (event) => {
   }
 };
 
+// Sign up form handler 
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
@@ -29,6 +30,7 @@ const signupFormHandler = async (event) => {
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
 
+  // if statement to check if the user has entered name, email, and password 
   if (name && email && password) {
     const response = await fetch('/api/users', {
       method: 'POST',

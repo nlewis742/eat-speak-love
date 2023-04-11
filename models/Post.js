@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 
 class Post extends Model {}
 
+// create fields/columns for Post model 
 Post.init(
   {
     id: {
@@ -16,7 +17,8 @@ Post.init(
       allowNull: false,
     },
     content: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
+      allowNull: false,
     },
     date_created: {
       type: DataTypes.DATE,
