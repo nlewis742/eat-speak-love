@@ -114,10 +114,10 @@ router.get('/oauth2/redirect/google', passport.authenticate('google', {
   failureRedirect: '/login'
 }),
 function(req, res) {
-  req.session.save(() => {
+  // req.session.save(() => {
     req.session.logged_in = true;
     res.redirect('/profile');
-      });
+      // });
 }
 );
 /* POST /logout
