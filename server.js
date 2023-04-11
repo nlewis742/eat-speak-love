@@ -17,17 +17,6 @@ const PORT = process.env.PORT || 3001;
 
 // // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
-// hbs.registerHelper('replace', function(str, find, replace) {
-//   return str.replace(new RegExp(find, 'g'), replace);
-// });
-
-// app.get('/login/google', passport.authenticate('google'));
-
-// app.get('/oauth2/redirect/google',
-//   passport.authenticate('google', { failureRedirect: '/login', failureMessage: true }),
-//   function(req, res) {
-//     res.redirect('/');
-//   });
 
 const sess = {
   secret: process.env.SECRET,
@@ -59,8 +48,3 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
-
-
-// const html = template(context);
-
-// console.log(html);
