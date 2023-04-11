@@ -4,10 +4,10 @@ var GoogleStrategy = require('passport-google-oauth20');
 var db = require('../../config/connection');
 
 
-// Configure the Facebook strategy for use by Passport.
+// Configure the Google strategy for use by Passport.
 //
 // OAuth 2.0-based strategies require a `verify` function which receives the
-// credential (`accessToken`) for accessing the Facebook API on the user's
+// credential (`accessToken`) for accessing the Google API on the user's
 // behalf, along with the user's profile.  The function must invoke `cb`
 // with a user object, which will be set at `req.user` in route handlers after
 // authentication.
@@ -110,10 +110,16 @@ router.get('/login/federated/google', passport.authenticate('google'));
     user returns, they are signed in to their linked account.
 */
 router.get('/oauth2/redirect/google', passport.authenticate('google', {
-  successReturnToOrRedirect: '/profile',
+  // successReturnToOrRedirect: '/profile',
   failureRedirect: '/login'
-}));
-
+}),
+function(req, res) {
+  req.session.save(() => {
+    req.session.logged_in = true;
+    res.redirect('/profile');
+      });
+}
+);
 /* POST /logout
  *
  * This route logs the user out.
