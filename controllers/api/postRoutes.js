@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-
+// gets all posts for homepage and creates new post for forum page 
 router.post('/', withAuth, async (req, res) => {
   try {
     
@@ -18,7 +18,7 @@ router.post('/', withAuth, async (req, res) => {
   console.log("post");
  
 });
-
+//delets post from forum page and profile page
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.destroy({
