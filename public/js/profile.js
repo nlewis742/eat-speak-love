@@ -1,14 +1,15 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#project-name').value.trim();
-  const needed_funding = document.querySelector('#project-funding').value.trim();
-  const description = document.querySelector('#project-desc').value.trim();
+  const title = document.querySelector('#project-name').value.trim();
+  // const dateCreated = document.querySelector('#project-funding').value.trim();
+  const content = document.querySelector('#project-desc').value.trim();
 
-  if (name && needed_funding && description) {
+  if (title && content) {
     const response = await fetch(`/api/posts`, {
       method: 'POST',
       body: JSON.stringify({ name, content, }),
+      body: JSON.stringify({ title, content }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -17,9 +18,10 @@ const newFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-      alert('Failed to create project');
+      alert('Failed to create post');
     }
   }
+  console.log("title, content");
 };
 
 const delButtonHandler = async (event) => {
