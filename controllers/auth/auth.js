@@ -86,7 +86,8 @@ var router = express.Router();
  * will be sent to the `GET /login/federated/accounts.google.com` route.
  */
 router.get('/login', function(req, res, next) {
-  res.render('login');
+  console.log('route hit3');
+  // res.render('login');
 });
 
 /* GET /login/federated/accounts.google.com
@@ -101,7 +102,7 @@ router.get('/login', function(req, res, next) {
  * Once Google has completed their interaction with the user, the user will be
  * redirected back to the app at `GET /oauth2/redirect/accounts.google.com`.
  */
-router.get('/login/federated/google', passport.authenticate('google'));
+router.get('/login/federated/google', passport.authenticate('google')),
 
 /*
     This route completes the authentication sequence when Google redirects the
@@ -114,6 +115,7 @@ router.get('/oauth2/redirect/google', passport.authenticate('google', {
   failureRedirect: '/login'
 }),
 function(req, res) {
+  console.log('route hit');
   // req.session.save(() => {
     req.session.logged_in = true;
     res.redirect('/profile');
