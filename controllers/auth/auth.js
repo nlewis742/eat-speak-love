@@ -87,7 +87,7 @@ var router = express.Router();
  */
 router.get('/login', function(req, res, next) {
   console.log('route hit3');
-  // res.render('login');
+  res.render('login');
 });
 
 /* GET /login/federated/accounts.google.com
