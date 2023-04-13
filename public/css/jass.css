@@ -50,7 +50,7 @@
     /* 1 */
     -webkit-text-size-adjust: 100%;
     /* 2 */
-    background-color: #dedee4;
+    background-color: #f4ead0;
   }
   
   /* Sections
@@ -462,12 +462,13 @@
   }
   
   a {
-    color: #19739c;
+    color: #36aecc;
     text-decoration: none;
+    font-family: cursive ;
   }
   
   a:hover {
-    color: #36aecc;
+    color: #84bac7;
     text-decoration: underline;
   }
   
