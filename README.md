@@ -12,9 +12,11 @@ A website to serve as a resource and support group for individuals with dysphagi
 - [Test](#test)
 - [Apps Used](#applications-used)
 - [Questions](#questions)
+- [Image](#image)
+- [Heroku Deployment](#heroku-deployment)
 
 ## Installation
-nmp i
+npm i
 
 ## Usage
 project repo
@@ -30,11 +32,21 @@ NA
 ## Test
 npm start
 
+## Apps Used
+- Sequelize 
+- Express-Handlebars
+- Passport
+
 
 ## Questions
 If you have any questions, please contact any of us, and check out more of our work work at https://github.com/ 
-- Natasha Lewis: nlewis742 
-- Jacob Zea: JacobZ96 
-- Jen Roberson: jrob02180 
-- Morgan Rott: mrott0397
+- Natasha Lewis: nlewis742 Email: nlackas12@gmail.com
+- Jacob Zea: JacobZ96 Email: Jacobzea96@gmail.com
+- Jen Roberson: jrob02180 Email: jrob02180@gmail.com
+- Morgan Rott: mrott0397 Email: todo978@gmail.com
 
+## Image
+![alt-text](./public/assets/Project%202%20screen%20shot.png)
+
+## Heroku Deployment
+http://immense-everglades-77302.herokuapp.com/
