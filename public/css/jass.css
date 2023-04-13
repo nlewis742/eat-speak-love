@@ -8,6 +8,7 @@
  .container {
   position: relative;
   width: 50%;
+  
 }
 
 .image {
@@ -409,7 +410,7 @@
   h4,
   h5,
   h6 {
-    margin: 0 0 0.5rem;
+    margin: 0 0 .5rem;
     line-height: 1.25;
   }
   
@@ -418,6 +419,7 @@
   }
   
   h2 {
+    text-align: center;
     font-size: 2rem;
   }
   
@@ -1297,8 +1299,8 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    margin-left: -15px;
-    margin-right: -15px;
+    margin-left: 5rem;
+    margin-right: 5rem;
   }
   
   [class*='col-'] {
